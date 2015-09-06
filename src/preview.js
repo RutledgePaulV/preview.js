@@ -13,13 +13,19 @@
 }(this, function (options, $) {
 
     var cache = {};
-    var defaults = {width: 200, height: 130};
+    var defaults = {width: 200, height: 130, readyCss: {color: 'green'}};
     var settings = $.extend({}, defaults, options);
     var isNotRelativePath = /(^\/\/.*)|(^http:\/\/)|(^https:\/\/)/;
 
+    // inject a tiny bit of styling to the page
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = '.previewjs-thumbnail { position: absolute; display: none; background: #ccc; border: 1px solid }';
+    document.getElementsByTagName('head')[0].appendChild(style);
+
+
     $(document).ready(function () {
 
-        // parses the url from a given anchor and takes a callback for what to do with the server's result
         var getUri = function (anchor, callback) {
             var href = $(anchor).attr('href');
             var url;
@@ -42,12 +48,11 @@
             }
         };
 
-        // loop over anchors on the page
         $('a[href]').each(function () {
             var anchor = $(this);
             getUri(anchor, function (result) {
                 var path = settings.server + result;
-                var thumbnail = $('<img src="' + path + '" width="' + settings.width + '" height="' + settings.height + '"/>');
+                var thumbnail = $('<img class="previewjs-thumbnail" src="' + path + '" width="' + settings.width + '" height="' + settings.height + '"/>');
                 $('body').append(thumbnail);
                 thumbnail.hide();
                 anchor.hover(function (e) {
@@ -55,6 +60,7 @@
                 }, function () {
                     $(thumbnail).hide();
                 });
+                anchor.css(settings.readyCss);
             });
         });
 

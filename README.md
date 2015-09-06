@@ -13,7 +13,8 @@ bower install --save preview.js
 
 ```html
 <!-- global style -->
-<script src="/path/to/bower_components/preview/dist/preview.min.js"></script>
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="/bower_components/preview/dist/preview.min.js"></script>
 <script>
     // if you were running preview-server via docker-machine (with the default VirtualBoxVM IP)...
     preview({server: 'http://192.168.99.100/'});

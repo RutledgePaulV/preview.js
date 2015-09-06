@@ -1,0 +1,24 @@
+{
+  "name": "preview.js",
+  "version": "0.0.0",
+  "authors": [
+    "Paul Rutledge <paul.v.rutledge@gmail.com>"
+  ],
+  "description": "A page drop-in that produces thumbnail previews for any publicly accessible links on the site.",
+  "main": "preview.js",
+  "keywords": [
+    "preview",
+    "preview.js",
+    "thumbnails",
+    "hoverstate"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rutledgepaulv/preview.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "preview.js",
+  "version": "0.0.0",
+  "description": "A page drop-in that produces thumbnail previews for any publicly accessible links on the site.",
+  "main": "preview.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rutledgepaulv/preview.js.git"
+  },
+  "keywords": [
+    "preview",
+    "preview.js",
+    "thumbnails",
+    "hoverstate"
+  ],
+  "author": "Paul Rutledge <paul.v.rutledge@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rutledgepaulv/preview.js/issues"
+  },
+  "homepage": "https://github.com/rutledgepaulv/preview.js#readme",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.4.0"
+  }
+}
